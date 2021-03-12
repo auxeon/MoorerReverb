@@ -1,5 +1,4 @@
 PRG=reverb
-#PRG=gcc0.exe
 
 OSTYPE := $(shell uname)
 ifeq ($(OSTYPE),Linux)
@@ -22,15 +21,5 @@ DRIVER0=reverb.cpp reverb.hpp
 gcc0:
 	g++  $(DRIVER0) $(OBJECTS0) $(GCCFLAGS) $(DEFINE) -lpthread -o $(PRG)
 #	thunar sine_wave.wav	
-#0 1 2 3 4 5 6:
-#	@echo "should run in less than 400 ms"
-#	./$(PRG) $@ >studentout$@
-#	@echo "lines after the next are mismatches with master output -- see out$@"
-#	diff out$@ studentout$@ $(DIFFLAGS)
-#7:
-#	@echo "should run in less than 5000 ms"
-#	./$(PRG) $@ >studentout$@
-#	@echo "lines after the next are mismatches with master output -- see out$@"
-#	diff out$@ studentout$@ $(DIFFLAGS)
 clean:
 	rm -f *.exe *.o *.obj
