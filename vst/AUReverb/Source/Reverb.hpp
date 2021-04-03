@@ -541,7 +541,8 @@ public:
         }
 
         // set all pass parameters - magic numbers from Mr Moorer
-        ap[0].init(10.0f, 20.0f, 0.7f);
+        ap[0].init(10.0f, max_delay_ms, 0.7f);
+        ap[0].delay_filter.set_delay_ms(10.0f);
         ap[0].set_sample_rate(sample_rate);
 
 

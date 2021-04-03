@@ -13,7 +13,7 @@
 
 using namespace juce;
 
-#define TOTAL_CONTROLS 23
+#define TOTAL_CONTROLS 22
 #define KNOB_WIDTH 75
 #define KNOB_HEIGHT 75
 #define KNOB_LABEL_WIDTH 75
@@ -25,7 +25,7 @@ using namespace juce;
 
 
 
-class AUReverbAudioProcessorEditor  : public juce::AudioProcessorEditor, public juce::Slider::Listener
+class AUReverbAudioProcessorEditor  : public juce::AudioProcessorEditor, public juce::Slider::Listener, public juce::Timer
 {
 public:
     AUReverbAudioProcessorEditor (AUReverbAudioProcessor&);
@@ -36,6 +36,8 @@ public:
     void resized() override;
 
     void sliderValueChanged(juce::Slider* slider) override;
+    void timerCallback() override;
+ 
 
 private:
     // This reference is provided as a quick way for your editor to
@@ -46,6 +48,8 @@ private:
     juce::Label* m_slider_label[TOTAL_CONTROLS];
     juce::SliderParameterAttachment* m_slider_attachment[TOTAL_CONTROLS];
     juce::AudioVisualiserComponent* m_audio_visualizer = NULL;
+
+    juce::Label* m_banner;
 
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AUReverbAudioProcessorEditor)
