@@ -21,7 +21,7 @@ g[0-5]	: [0.0, 1.0 ]	comb filter gain
 R[0-5]	: [0.0, 1.0 ]	comb filter coefficient lp
 L[0-5]	: [0.0, 1.0 ]	comb filter delay in ms
 
-### Extra Credit Implemented
+### extras
 * Realtime Reverb PLugin
 * Responsive controls g<->R correlation
 * RealTime Wave form display
